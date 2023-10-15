@@ -100,7 +100,7 @@ function exibir(filmes){
 
 pesquisaInput.addEventListener('keyup',(e) => {
      let busca = e.target.value;
-     const filmesFiltrados = filmes.filter((filme) => filme.titulo.toLocaleLowerCase().includes(busca))
+     const filmesFiltrados = filmes.filter((filme) => filme.titulo.toLocaleLowerCase().includes(busca.toLocaleLowerCase()))
 
      exibir(filmesFiltrados)
 })
