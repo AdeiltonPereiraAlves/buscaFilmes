@@ -96,11 +96,14 @@ function exibir(filmes){
           div.appendChild(img)
      })
 }
+function filtrarFilmes(filmes,busca){
+    return filmes.filter((filme) => filme.titulo.toLocaleLowerCase().includes(busca.toLocaleLowerCase()))
+}
 
 
 pesquisaInput.addEventListener('keyup',(e) => {
      let busca = e.target.value;
-     const filmesFiltrados = filmes.filter((filme) => filme.titulo.toLocaleLowerCase().includes(busca.toLocaleLowerCase()))
+     const filmesFiltrados = filtrarFilmes(filmes,busca)
 
      exibir(filmesFiltrados)
 })
